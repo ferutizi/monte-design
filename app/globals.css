@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), sans-serif;
+
+  --color-ink: #0b2a3a;
+  --color-ink-hover: #134a63;
+  --color-sand: #f6f3ee;
+  --color-sand-dark: #eae4da;
+  --color-line: #d5cec2;
+  --color-muted: #4a6170;
+  --color-body: #34505f;
+  --color-mist: #b9cbd4;
+  --color-accent: #ff7a59;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    margin: 0;
+    background: var(--color-sand);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  a {
+    color: var(--color-ink);
+  }
+  a:hover {
+    color: var(--color-ink-hover);
+  }
+
+  input,
+  select {
+    font: inherit;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Mapa ilustrado (placeholder hasta embeber el mapa real) */
+.map-placeholder {
+  background: linear-gradient(180deg, #a9d6e5 0%, #d6ecf1 50%, #f4ede2 50.5%, #e5d7c3 100%);
 }
+
